@@ -69,4 +69,4 @@ itemForm.addEventListener('submit', async (e) => {
   } catch (err) {
     console.error('Error adding item:', err);
   }
-});
+});  
