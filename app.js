@@ -70,3 +70,22 @@ itemForm.addEventListener('submit', async (e) => {
     console.error('Error adding item:', err);
   }
 });  
+
+
+// Delete item from API (Delete)
+async function deleteItem(id) {
+  try {
+    const res = await fetch(`${API_URL}/${id}`, {
+      method: 'DELETE'
+    });
+
+    if (res.ok) {
+      fetchItems(); // Refresh list after deleting
+    }
+  } catch (err) {
+    console.error('Error deleting item:', err);
+  }
+}
+
+// Load all items when the page loads
+fetchItems();
