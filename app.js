@@ -31,7 +31,8 @@ async function fetchItems() {
 // Display items on the page
 function renderItems(items) {
   itemList.innerHTML = ''; // Clear the list first
-
+  console.log('Rendering items:', items); 
+ 
   items.forEach(item => {
     const li = document.createElement('li');  // Create <li>
     li.textContent = item.name; // Set item text
@@ -46,3 +47,26 @@ function renderItems(items) {
     itemList.appendChild(li);   // Add <li> to the list
   });
 }
+
+// STEP: Create item using form (Create)
+itemForm.addEventListener('submit', async (e) => {
+  e.preventDefault(); // Prevent page reload
+  const name = nameInput.value.trim(); // Get input value
+
+  if (!name) return; // Don't submit empty values
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST', // POST to API
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name }) // Send name in request body
+    });
+       if (res.ok) {
+      nameInput.value = ''; // Clear input
+      fetchItems();         // Refresh list
+    }
+  } catch (err) {
+    console.error('Error adding item:', err);
+  }
+});
