@@ -8,11 +8,21 @@
 
    // app.js
 
+// set API endpoint
 const API_URL = 'http://localhost:3000/items';
 
-// Fetch all items from the API
+// Get DOM elements
+const itemForm = document.getElementById('item-form');
+const itemList = document.getElementById('item-list');
+const nameInput = document.getElementById('name');
+
+// STEP: Get/Read from API 
 async function fetchItems() {
-  const res = await fetch('http://localhost:3000/items'); // fetch from the server
-  const items = await res.json(); 
-  console.log(items); 
+  try {
+    const res = await fetch(API_URL); // Use fetch to GET from API
+    const items = await res.json();   // Convert response to JSON
+    renderItems(items);               // Pass data to render function
+  } catch (err) {
+    console.error('Error fetching items:', err);
+  }
 }
