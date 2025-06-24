@@ -9,3 +9,10 @@
    // app.js
 
 const API_URL = 'http://localhost:3000/items';
+
+// Fetch all items from the API
+async function fetchItems() {
+  const res = await fetch('http://localhost:3000/items'); // fetch from the server
+  const items = await res.json(); 
+  console.log(items); 
+}
