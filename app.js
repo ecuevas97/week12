@@ -26,3 +26,23 @@ async function fetchItems() {
     console.error('Error fetching items:', err);
   }
 }
+
+
+// Display items on the page
+function renderItems(items) {
+  itemList.innerHTML = ''; // Clear the list first
+
+  items.forEach(item => {
+    const li = document.createElement('li');  // Create <li>
+    li.textContent = item.name; // Set item text
+ 
+// Create a Delete Button (Delete)
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.onclick = () => deleteItem(item.id); // On click, call delete
+
+    li.appendChild(deleteBtn);  // Add button to <li>
+    itemList.appendChild(li);   // Add <li> to the list
+  });
+}
