@@ -48,7 +48,7 @@ function renderItems(items) {
   });
 }
 
-// STEP: Create item using form (Create)
+// Create item using form (Create)
 itemForm.addEventListener('submit', async (e) => {
   e.preventDefault(); // Prevent page reload
   const name = nameInput.value.trim(); // Get input value
