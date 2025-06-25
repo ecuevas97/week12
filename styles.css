@@ -11,6 +11,7 @@ body {
   min-height: 100vh;
 }
 
+/* card- style container */
 .container {
   background: #ffc0cb; /* classic pink */  
   padding: 20px;
@@ -20,7 +21,34 @@ body {
   width: 300px;
 }
 
+/*title*/
 h1 {
   text-align: center;
   color: #b30059; /* deep pink */}
 
+/* Form layout */
+form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ffb6c1;
+  border-radius: 6px;
+  background-color: #fff0f5; /* very light pink */
+  color: #4d0039;
+}
+
+button {
+  padding: 10px 12px;
+  margin-left: 8px;
+  background-color: #e75480; /* medium pink */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
