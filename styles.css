@@ -52,3 +52,25 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
+
+button:hover {
+  background-color: #cc3366;
+}
+
+/* List styles */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  background: #fff0f5; /* blush pink */
+  border: 1px solid #ffc0cb;
+  border-radius: 6px;
+  color: #4d0039;
+}
